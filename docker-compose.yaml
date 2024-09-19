@@ -1,0 +1,6 @@
+services:
+  lilyspring:
+    build: .
+    ports:
+      - 8080:80
+    container_name: lilyspring
