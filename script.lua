@@ -21,6 +21,11 @@ end
 local outputContent = outputFile:read("*a")
 outputFile:close()
 
+-- Add CORS headers
+ngx.header["Access-Control-Allow-Origin"] = "*"
+ngx.header["Access-Control-Allow-Methods"] = "GET, POST, OPTIONS"
+ngx.header["Access-Control-Allow-Headers"] = "Content-Type"
+
 ngx.header.content_type = "image/svg+xml"
 ngx.header["Content-Disposition"] = "inline"
 ngx.say(outputContent)
